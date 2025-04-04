@@ -1,5 +1,5 @@
 <div>
-    <flux:modal name="edit-post" class="md:w-96">
+    <flux:modal name="edit-post" class="md:w-96" @close="closeForm">
         <fieldset class="border-2 rounded-[10px] p-[10px]">
             <legend class="p-[10px]">livewire.post-edit.blade</legend>  
             <div class="space-y-6">
@@ -15,7 +15,7 @@
                 <div class="flex">
                     <flux:spacer />
 
-                    <flux:button type="submit" variant="primary" wire:click="create">Save Edit Post</flux:button>
+                    <flux:button type="submit" variant="primary" wire:click="update">Save Edit Post</flux:button>
                 </div>
             </div>
         </fieldset>

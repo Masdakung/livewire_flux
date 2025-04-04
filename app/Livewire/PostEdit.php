@@ -19,6 +19,20 @@ class PostEdit extends Component
         Flux::modal('edit-post')->show();
     }
 
+    public function update(){
+        $this->validate([
+            "post_title" => "required",
+            "post_detail" => "required"
+        ]);
+
+        $post = Post::find($this->postId);
+        $post->post_title = $this->post_title;
+        $post->post_detail = $this->post_detail;
+        $post->save();
+        Flux::modal('edit-post')->close();
+        $this->dispatch('reloadPosts');
+    }
+
     public function render()
     {
         return view('livewire.post-edit');
