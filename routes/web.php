@@ -7,11 +7,11 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
-Route::view('/dashboard', 'menu_left.dashboard')->middleware(['auth', 'verified'])->name('dashboard');
+Route::view('/dashboard', 'dashboard')->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::view('/users', 'menu_left.users')->middleware(['auth', 'verified'])->name('users');
+Route::view('/users', 'users')->middleware(['auth', 'verified'])->name('users');
 
-Route::view('/posts', 'menu_left.posts')->middleware(['auth', 'verified'])->name('posts');
+Route::view('/posts', 'posts')->middleware(['auth', 'verified'])->name('posts');
 
 Route::middleware(['auth'])->group(function () {
     Route::redirect('settings', 'settings/profile');

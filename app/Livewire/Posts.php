@@ -33,10 +33,16 @@ class Posts extends Component
 
     public function delete(){
         $id = $this->postId;
-        if($id){
-            Post::find($this->postId)->delete();
-            $this->reloadPosts();
+        try{
+            if($id){
+                Post::find($this->postId)->delete();
+                $this->reloadPosts();
+                session()->flash('success', 'Delete Post Success.');
+            }
+        }catch(\Exception $e){
+            session()->flash('error', 'Delete Post Error.');
         }
+        
         Flux::modal('delete-post')->close();
     }
 

@@ -57,5 +57,12 @@
             </div>
         </div>
     </flux:modal>
+
+    @if(session()->has('success'))
+        @include('.alert.success', ['message' => session('success')])
+    @elseif(session()->has('error'))
+        @include('.alert.error', ['message' => session('error')])
+    @endif
+        
     <br>
 </div>

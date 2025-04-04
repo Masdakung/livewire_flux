@@ -20,17 +20,23 @@ class PostEdit extends Component
     }
 
     public function update(){
-        $this->validate([
-            "post_title" => "required",
-            "post_detail" => "required"
-        ]);
-
-        $post = Post::find($this->postId);
-        $post->post_title = $this->post_title;
-        $post->post_detail = $this->post_detail;
-        $post->save();
+        try{
+            $this->validate([
+                "post_title" => "required",
+                "post_detail" => "required"
+            ]);
+    
+            $post = Post::find($this->postId);
+            $post->post_title = $this->post_title;
+            $post->post_detail = $this->post_detail;
+            $post->save();
+            $this->dispatch('reloadPosts');
+            session()->flash('success', 'Updated Post Success.');
+        }catch (\Exception $e){
+            session()->flash('error', 'Update Post Error.');
+        }
+        
         Flux::modal('edit-post')->close();
-        $this->dispatch('reloadPosts');
     }
 
     public function render()
