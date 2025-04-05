@@ -15,7 +15,7 @@
                 <flux:navlist.item icon="document-text" href="#">Documents</flux:navlist.item>
                 <flux:navlist.item icon="clipboard-document-list" :href="route('posts')" :current="request()->routeIs('posts')" wire:navigate>{{ __('Posts') }}</flux:navlist.item> 
                 <flux:navlist.group expandable heading="Favorites" class="hidden lg:grid">
-                    <flux:navlist.item href="#">+++Marketing site</flux:navlist.item>
+                    <flux:navlist.item href="#">Marketing site</flux:navlist.item>
                     <flux:navlist.item href="#">Android app</flux:navlist.item>
                     <flux:navlist.item href="#">Brand guidelines</flux:navlist.item>
                 </flux:navlist.group>

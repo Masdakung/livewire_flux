@@ -21,3 +21,4 @@ yarn-error.log
 /.nova
 /.vscode
 /.zed
+resources/views/components/layouts/app/sidebar.blade.php
