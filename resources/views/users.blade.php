@@ -1,4 +1,4 @@
-<x-layouts.app :title="__('Users')">
+<x-layouts.app :title="__('Users Page')">
     
     <div class="relative mb-6 w-full">
         <flux:heading size="xl" level="1">User</flux:heading>

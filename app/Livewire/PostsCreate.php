@@ -17,7 +17,7 @@ class PostsCreate extends Component
                 'post_detail' => "required",
             ]);
             $save_post = Post::create([
-                "post_titlet" => $this->post_title,
+                "post_title" => $this->post_title,
                 "post_detail" => $this->post_detail
             ]);
             $this->dispatch('reloadPosts');

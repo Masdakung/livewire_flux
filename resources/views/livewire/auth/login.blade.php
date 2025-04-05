@@ -112,7 +112,7 @@ new #[Layout('components.layouts.auth')] class extends Component {
         <!-- Remember Me -->
         <flux:checkbox wire:model="remember" :label="__('Remember me')" />
         <div>
-            <label>Username: dev@gmail.com</label>
+            <label>Username: dev@example.com</label>
             <br>
             <label>Password: 12345678</label>
         </div>
