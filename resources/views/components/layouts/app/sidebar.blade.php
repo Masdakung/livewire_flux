@@ -24,7 +24,7 @@
 
             <flux:navlist variant="outline">
                 <flux:navlist.item icon="cog-6-tooth" :href="route('settings.profile')" :current="request()->routeIs('settings.*')" wire:navigate>Settings</flux:navlist.item>
-                <flux:navlist.item icon="information-circle" href="#">+++Help</flux:navlist.item>
+                <flux:navlist.item icon="information-circle" href="#">Help</flux:navlist.item>
             </flux:navlist>
 
             <flux:dropdown position="top" align="start" class="max-lg:hidden">
