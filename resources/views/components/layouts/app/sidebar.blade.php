@@ -13,7 +13,12 @@
                 <flux:navlist.item icon="home" href="#" >Home</flux:navlist.item>
                 <flux:navlist.item icon="inbox" badge="12" href="#">Inbox</flux:navlist.item>
                 <flux:navlist.item icon="document-text" href="#">Documents</flux:navlist.item>
-                <flux:navlist.item icon="clipboard-document-list" :href="route('posts')" :current="request()->routeIs('posts')" wire:navigate>{{ __('Posts') }}</flux:navlist.item> 
+                <flux:navlist.item icon="clipboard-document-list" 
+                    :href="route('posts')" 
+                    :current="request()->isRoute('posts', 'bg-menu')" 
+                    wire:navigate>
+                        {{ __('Posts') }}
+                </flux:navlist.item> 
                 <flux:navlist.group expandable heading="Favorites" class="hidden lg:grid">
                     <flux:navlist.item href="#">Marketing site</flux:navlist.item>
                     <flux:navlist.item href="#">Android app</flux:navlist.item>
@@ -23,7 +28,13 @@
             <flux:spacer />
 
             <flux:navlist variant="outline">
-                <flux:navlist.item icon="cog-6-tooth" :href="route('settings.profile')" :current="request()->routeIs('settings.*')" wire:navigate>Settings</flux:navlist.item>
+                <flux:navlist.item icon="cog-6-tooth" 
+                    wire:navigate
+                    :href="route('settings.profile')" 
+                    :current="request()->isRoute('settings.*', 'bg-menu')" 
+                    >
+                    Settings
+                </flux:navlist.item>
                 <flux:navlist.item icon="information-circle" href="#">Help</flux:navlist.item>
             </flux:navlist>
 

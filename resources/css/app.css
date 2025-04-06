@@ -10,6 +10,7 @@
 
 :root{
     --bg-green-08: #327b46;
+    --bg-gray-08: #05527e;
 }
 @theme {
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
@@ -48,6 +49,10 @@
     ::file-selector-button {
         border-color: var(--color-gray-200, currentColor);
     }
+}
+
+[data-current='bg-menu'] {
+    @apply bg-[var(--bg-gray-08)] text-white;
 }
 
 [data-flux-field]:not(ui-radio) {
@@ -91,8 +96,8 @@ table.tb_default{
 
 .dark\:data-current\:bg-white\/\[7\%\] {
     &:where(.dark, .dark *) {
-        &[data-current] {
-            background-color: var(--bg-green-08);
+        &[data-current='bg-menu'] {
+            background-color: var(--bg-gray-08);
         }
     }
 }
