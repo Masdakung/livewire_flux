@@ -8,6 +8,12 @@
             <flux:sidebar.toggle class="lg:hidden" icon="x-mark" />
             <flux:brand href="#" logo="https://fluxui.dev/img/demo/logo.png" name="Acme Inc." class="px-2 dark:hidden" />
             <flux:brand href="#" logo="https://fluxui.dev/img/demo/dark-mode-logo.png" name="Acme Inc." class="px-2 hidden dark:flex" />
+            <form method="POST" action="{{ route('logout') }}" class="w-full">
+                @csrf
+                <flux:menu.item as="button" type="submit" icon="arrow-right-start-on-rectangle" class="w-full">
+                    {{ __('Log Out') }}
+                </flux:menu.item>
+            </form>
             <flux:input as="button" variant="filled" placeholder="Search..." icon="magnifying-glass" />
             <flux:navlist variant="outline">
                 <flux:navlist.item icon="home" href="#" >Home</flux:navlist.item>
@@ -50,7 +56,12 @@
                         <flux:menu.radio>Truly Delta</flux:menu.radio>
                     </flux:menu.radio.group>
                     <flux:menu.separator />
-                    <flux:menu.item icon="arrow-right-start-on-rectangle">Logout</flux:menu.item>
+                    <form method="POST" action="{{ route('logout') }}" class="w-full">
+                        @csrf
+                        <flux:menu.item as="button" type="submit" icon="arrow-right-start-on-rectangle" class="w-full">
+                            {{ __('Log Out') }}
+                        </flux:menu.item>
+                    </form>
                 </flux:menu>
             </flux:dropdown>
         </flux:sidebar>
@@ -67,7 +78,12 @@
                             <flux:menu.radio>Truly Delta</flux:menu.radio>
                         </flux:menu.radio.group>
                         <flux:menu.separator />
-                        <flux:menu.item icon="arrow-right-start-on-rectangle">Logout</flux:menu.item>
+                        <form method="POST" action="{{ route('logout') }}" class="w-full">
+                            @csrf
+                            <flux:menu.item as="button" type="submit" icon="arrow-right-start-on-rectangle" class="w-full">
+                                {{ __('Log Out') }}
+                            </flux:menu.item>
+                        </form>
                     </flux:menu>
                 </flux:dropdown>
             </flux:navbar>

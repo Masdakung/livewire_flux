@@ -23,7 +23,7 @@ class StyleProvider extends ServiceProvider
     {
         //--- Check Route and add data- Example: data-content='data-content' ----
         Request::macro('isRoute', function ($patterns, $call=null) {
-                
+            
             if(!$patterns) return false;
 
             if(!is_array($patterns)){
