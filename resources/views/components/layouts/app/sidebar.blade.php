@@ -10,6 +10,12 @@
             <flux:brand href="#" logo="https://fluxui.dev/img/demo/dark-mode-logo.png" name="Acme Inc." class="px-2 hidden dark:flex" />
             
             <flux:input as="button" variant="filled" placeholder="Search..." icon="magnifying-glass" />
+            <form method="POST" action="{{ route('logout') }}" class="w-full">
+                @csrf
+                <flux:menu.item as="button" type="submit" icon="arrow-right-start-on-rectangle" class="w-full">
+                   {{ __('Log Out') }}
+                </flux:menu.item>
+            </form>
             <flux:navlist variant="outline">
                 <flux:navlist.item icon="home" href="#" >Home</flux:navlist.item>
                 <flux:navlist.item icon="inbox" badge="12" href="#">Inbox</flux:navlist.item>
