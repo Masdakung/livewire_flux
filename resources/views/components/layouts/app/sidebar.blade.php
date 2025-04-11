@@ -8,6 +8,7 @@
             <flux:sidebar.toggle class="lg:hidden" icon="x-mark" />
             <flux:brand href="#" logo="https://fluxui.dev/img/demo/logo.png" name="Acme Inc." class="px-2 dark:hidden" />
             <flux:brand href="#" logo="https://fluxui.dev/img/demo/dark-mode-logo.png" name="Acme Inc." class="px-2 hidden dark:flex" />
+            
             <flux:input as="button" variant="filled" placeholder="Search..." icon="magnifying-glass" />
             <flux:navlist variant="outline">
                 <flux:navlist.item icon="home" href="#" >Home</flux:navlist.item>
