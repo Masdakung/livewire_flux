@@ -17,7 +17,7 @@ class RequestUrlMiddleware
     {
         if(str_contains($request->getHost(), 'ngrok-free.app')){
             // echo "APP_ENV:>";
-            \Illuminate\Support\Facades\URL::forceScheme('https');
+            // \Illuminate\Support\Facades\URL::forceScheme('https');
             // echo "get url:>".$getUrls;
         }
         return $next($request);

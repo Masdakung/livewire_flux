@@ -9,6 +9,10 @@
 
         @livewire('user-manage.usersCreate')
         
+        <flux:input 
+            wire:model.live.debounce.300ms="search_key" 
+            label="Search:" />
+
         <table class="tb_default">
             <thead>
                 <tr>
@@ -18,7 +22,8 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($ListUsr as $user)
+                
+                @foreach ($listUser as $user)
                     <tr>
                         <td>{{ $user->name }}</td>
                         <td>{{ $user->email }}</td>
@@ -27,6 +32,9 @@
                 @endforeach
             </tbody>
         </table>
+        <div>
+            {{ $listUser->links() }}
+        </div>
     </fieldset>
     <br>
 </div>
