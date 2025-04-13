@@ -9,7 +9,16 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root{
-    --bg-green-08: #327b46;
+    /* --bg_green_01: #14fdbe;
+    --bg_green_02: #13eeb3;
+    --bg_green_03: #13e1a9;
+    --bg_green_04: #11cc99;
+    --bg_green_05: #0eb486; */
+    --bg_green_06: #0d9c74;
+    --bg_green_07: #0a7a5b;
+    --bg_green_08: #07533e;
+    --bg_green_09: #064333;
+    --bg_green_10: #043024;
     --bg-gray-08: #05527e;
 }
 @theme {
@@ -51,8 +60,12 @@
     }
 }
 
+body{
+    @apply text-emerald-800;
+}
+
 [data-current='bg-menu'] {
-    @apply bg-[var(--bg-gray-08)] text-white;
+    @apply bg-[var(--bg_green_08)] text-white;
 }
 
 [data-flux-field]:not(ui-radio) {
@@ -74,34 +87,42 @@ select:focus[data-flux-control] {
 }
 
 table.tb_default{
-    @apply border-1 border-[#62605b] w-full table-auto border-collapse text-sm;
+    @apply w-full border-separate border-spacing-0 text-sm overflow-hidden 
+    border-[1px] border-emerald-700
+    dark:border-[1px] dark:border-[var(--bg-gray-08)]
+    rounded-2xl ;
 
     thead{
-
-        th{
-            @apply first:rounded-ss-[10px] border-b border-gray-200 p-5 pl-8 text-left font-medium text-gray-400 
-            dark:bg-[#171717] dark:border-gray-600 dark:text-gray-200
-            last:rounded-se-[10px];
+        tr{
+            @apply text-white
+                bg-emerald-700
+                dark:bg-[var(--bg-gray-08)]
+                dark:text-gray-200;
+            th{
+                @apply 
+                
+                p-5 pl-8 text-left font-medium
+                dark:bg-[#171717] dark:border-gray-600 ;
+            }
         }
     }
 
     tbody{
         @apply bg-white dark:bg-gray-800;
         tr{
+            
             td{
-                @apply border-b border-gray-100 p-5 pl-8 text-gray-500 dark:border-gray-700 dark:text-gray-400;
+                @apply border-b-1 border-b-emerald-700
+                p-5 pl-8 text-gray-500 
+                dark:border-gray-700 dark:text-gray-400
+                ;
             }
+          &:last-child{
+            td{
+                @apply border-b-transparent border-b-1;
+            }
+          }  
         }
-    }
+    }   
 }
 
-.dark\:data-current\:bg-white\/\[7\%\] {
-    &:where(.dark, .dark *) {
-        &[data-current='bg-menu'] {
-            background-color: var(--bg-gray-08);
-        }
-    }
-}
-/* \[:where(&)\]:size-4 {
-    @apply size-4;
-} */

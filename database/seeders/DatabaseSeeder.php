@@ -29,6 +29,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'development',
             'email' => 'dev@example.com',
             'password' => Hash::make('12345678'),
+            'permission' => 0,
             'created_at' => now(),
             'updated_at' => now(),
         ]);

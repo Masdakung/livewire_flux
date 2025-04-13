@@ -16,14 +16,14 @@
                 <flux:navlist variant="outline">
                     <flux:navlist.item icon="home" href="{{ route('home') }}" >Home</flux:navlist.item>
 
-                    <flux:navlist.item icon="user" 
+                    <flux:navlist.item icon="user"
                         :href="route('users')" 
                         :current="request()->isRoute('users', 'bg-menu')" 
                         wire:navigate>
                             {{ __('Users') }}
                     </flux:navlist.item>
 
-                    <flux:navlist.item icon="inbox" badge="12" href="#">Inbox</flux:navlist.item>
+                    <flux:navlist.item icon="inbox" badge="12" badgeColor="green" href="#">Inbox</flux:navlist.item>
 
                     <flux:navlist.item icon="document-text" href="#">Documents</flux:navlist.item>
 

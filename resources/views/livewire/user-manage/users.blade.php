@@ -1,7 +1,7 @@
 <div>
     <div class="mb-[15px] text-right">
         <flux:modal.trigger name="create-users">
-            <flux:button>Create User</flux:button>
+            <flux:button icon="user-plus" variant="success">Create User</flux:button>
         </flux:modal.trigger>
     </div>
 
@@ -16,18 +16,32 @@
     <table class="tb_default">
         <thead>
             <tr>
-                <th>User</th>
+                <th>Avatar</th>
                 <th>E-mail</th>
-                <th>Permission</th>
+                <th>User</th>
+                <th>Manage</th>
+                <th>Data Create</th>
             </tr>
         </thead>
         <tbody>
             
             @foreach ($listUser as $user)
                 <tr>
-                    <td>{{ $user->name }}</td>
+                    <td></td>
                     <td>{{ $user->email }}</td>
-                    <td>1961</td>
+                    <td>{{ $user->name }}</td>
+                    <td>{{ $user->created_at }}</td>
+                    <td>
+                        <flux:dropdown>
+                            <flux:navbar.item icon:trailing="chevron-down">Manage</flux:navbar.item>
+                            <flux:navmenu>
+                                <flux:navmenu.item href="#">Edit</flux:navmenu.item>
+                                <flux:navmenu.item href="#">Active</flux:navmenu.item>
+                                <flux:navmenu.item href="#">Not Acitve</flux:navmenu.item>
+                                <flux:navmenu.item href="#">Delete</flux:navmenu.item>
+                            </flux:navmenu>
+                        </flux:dropdown>
+                    </td>
                 </tr>
             @endforeach
         </tbody>
