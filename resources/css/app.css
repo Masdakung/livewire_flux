@@ -79,7 +79,8 @@ body{
 input:focus[data-flux-control],
 textarea:focus[data-flux-control],
 select:focus[data-flux-control] {
-    @apply outline-hidden ring-2 ring-accent ring-offset-2 ring-offset-accent-foreground;
+    @apply !outline-0 shadow-gray-400;
+    /* @apply outline-hidden ring-2 ring-accent ring-offset-2 ring-offset-accent-foreground; */
 }
 
 .btn_eme_700{

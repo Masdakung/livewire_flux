@@ -32,6 +32,11 @@
                     </td>
                 </tr>
                 @endforeach
+                @if($posts)
+                <tr>
+                    <td colspan="4" class="text-center !text-red-700 text-xl font-bold">No Data</td>
+                </tr>
+                @endif
             </tbody>
         </table>
     </fieldset>

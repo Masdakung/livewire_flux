@@ -16,9 +16,9 @@
     <table class="tb_default">
         <thead>
             <tr>
-                <th>Avatar</th>
+                <th class="w-[50px]">Avatar</th>
                 <th>E-mail</th>
-                <th>User</th>
+                <th>Name</th>
                 <th>Manage</th>
                 <th>Data Create</th>
             </tr>
@@ -27,18 +27,28 @@
             
             @foreach ($listUser as $user)
                 <tr>
-                    <td></td>
+                    <td>
+                        @if($user->picture)
+                            <flux:avatar src="{{ asset('storage/'.$user->picture) }}" size="lg" />
+                        @else
+                            <flux:avatar name="{{ $user->name }}" color="auto" color:seed="{{ $user->id }}" size="lg" />
+                        @endif
+                    </td>
                     <td>{{ $user->email }}</td>
                     <td>{{ $user->name }}</td>
                     <td>{{ $user->created_at }}</td>
                     <td>
                         <flux:dropdown>
-                            <flux:navbar.item icon:trailing="chevron-down">Manage</flux:navbar.item>
+                            <flux:navbar.item icon:trailing="chevron-down" >Manage</flux:navbar.item>
                             <flux:navmenu>
-                                <flux:navmenu.item href="#">Edit</flux:navmenu.item>
-                                <flux:navmenu.item href="#">Active</flux:navmenu.item>
-                                <flux:navmenu.item href="#">Not Acitve</flux:navmenu.item>
-                                <flux:navmenu.item href="#">Delete</flux:navmenu.item>
+                                <flux:text color="green" class="flex items-center p-2 gap-1">
+                                    <flux:icon.pencil-square class="size-5" />
+                                    Test
+                                </flux:text>
+                                <flux:navmenu.item href="#" icon="pencil-square" >Edit</flux:navmenu.item>
+                                <flux:navmenu.item href="#" icon="check-circle" >Active</flux:navmenu.item>
+                                <flux:navmenu.item href="#" icon="no-symbol" >Not Acitve</flux:navmenu.item>
+                                <flux:navmenu.item href="#" icon="trash" variant="danger" >Delete</flux:navmenu.item>
                             </flux:navmenu>
                         </flux:dropdown>
                     </td>

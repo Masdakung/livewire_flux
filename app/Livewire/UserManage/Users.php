@@ -4,6 +4,7 @@ namespace App\Livewire\UserManage;
 
 use Livewire\Component;
 use App\Models\User;
+use Livewire\Attributes\On;
 use Livewire\WithPagination;
 
 class Users extends Component
@@ -17,7 +18,8 @@ class Users extends Component
     //     $this->listUser = User::all();
     // }
 
-    public function list_user(){
+    #[On('user_load')]
+    public function user_load(){
         $query = User::query();
         if($this->search_key){
             // dd($this->search_key);
@@ -33,7 +35,7 @@ class Users extends Component
 
     public function render()
     {
-        $listUser = $this->list_user();
+        $listUser = $this->user_load();
         return view('livewire.user-manage.users',compact('listUser'));
     }
 }

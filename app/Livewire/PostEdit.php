@@ -10,6 +10,7 @@ use Flux;
 class PostEdit extends Component
 {
     public $postId, $post_title, $post_detail;
+    
     #[On('editPost')]
     public function editPost($id){
         $post = Post::find($id);
