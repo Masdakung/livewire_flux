@@ -5,7 +5,7 @@
 /public/storage
 /storage/*.key
 /storage/pail
-# !storage/app/public/profiles
+!storage/app/public/profiles
 /vendor
 .env
 .env.backup
