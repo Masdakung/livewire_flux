@@ -87,6 +87,12 @@ select:focus[data-flux-control] {
     @apply p-[15px] bg-emerald-700 rounded-[5px] text-white;
 }
 
+.blck_green{
+    @apply text-emerald-300 bg-green-200 hover:bg-green-300 text-emerald-600 hover:text-emerald-800 
+    dark:bg-transparent dark:hover:bg-green-200/20 dark:text-green-300 dark:hover:text-green-500 
+    rounded-md;
+}
+
 table.tb_default{
     @apply w-full border-separate border-spacing-0 text-sm overflow-hidden 
     border-[1px] border-emerald-700

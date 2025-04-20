@@ -22,20 +22,20 @@
             </thead>
             <tbody>
                 @foreach($posts as $post)
-                <tr>
-                    <td>{{ $post->post_title }}</td>
-                    <td>{{ $post->post_detail }}</td>
-                    <td>{{ $post->updated_at }}</td>
-                    <td>
-                        <flux:button variant="primary" wire:click="edit({{ $post->id }})">แก้ไข</flux:button>
-                        <flux:button variant="danger" wire:click="deleteConfirm({{ $post->id }})">ลบ</flux:button>
-                    </td>
-                </tr>
+                    <tr>
+                        <td>{{ $post->post_title }}</td>
+                        <td>{{ $post->post_detail }}</td>
+                        <td>{{ $post->updated_at }}</td>
+                        <td>
+                            <flux:button variant="primary" wire:click="edit({{ $post->id }})">แก้ไข</flux:button>
+                            <flux:button variant="danger" wire:click="deleteConfirm({{ $post->id }})">ลบ</flux:button>
+                        </td>
+                    </tr>
                 @endforeach
-                @if($posts)
-                <tr>
-                    <td colspan="4" class="text-center !text-red-700 text-xl font-bold">No Data</td>
-                </tr>
+                @if(COUNT($posts) < 1)
+                    <tr>
+                        <td colspan="4" class="text-center !text-red-700 text-xl font-bold">No Data</td>
+                    </tr>
                 @endif
             </tbody>
         </table>
